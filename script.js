@@ -364,6 +364,7 @@ function initContactForm() {
   const resetBtn = document.getElementById('reset-contact-form-btn');
   const gmailLink = document.getElementById('success-gmail-link');
   const mailtoLink = document.getElementById('success-mailto-link');
+  const copyPreparedBtn = document.getElementById('copy-prepared-btn');
   const userTitle = document.getElementById('success-user-title');
   const userDesc = document.getElementById('success-user-desc');
 
@@ -378,17 +379,35 @@ function initContactForm() {
   });
 
   if (resetBtn && contactForm && successBox) {
-    resetBtn.addEventListener('click', () => {
+    resetBtn.addEventListener('click', (e) => {
+      e.preventDefault();
       successBox.style.display = 'none';
       contactForm.style.display = 'flex';
       contactForm.reset();
     });
   }
 
-  if (!contactForm) return;
+  let latestMessageText = '';
 
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+  if (copyPreparedBtn) {
+    copyPreparedBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (!latestMessageText) {
+        latestMessageText = 'To: bharideysaranya0809@gmail.com';
+      }
+      navigator.clipboard.writeText(latestMessageText).then(() => {
+        showToast('📋 Formatted message copied to clipboard!');
+      }).catch(() => {
+        showToast('📋 Message ready to send to bharideysaranya0809@gmail.com');
+      });
+    });
+  }
+
+  function processSubmission(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
 
     const name = document.getElementById('contact-name')?.value?.trim();
     const email = document.getElementById('contact-email')?.value?.trim();
@@ -396,11 +415,13 @@ function initContactForm() {
     const message = document.getElementById('contact-message')?.value?.trim();
 
     if (!name || !email || !message) {
-      showToast('Please fill in all required fields.');
+      showToast('⚠️ Please fill in all required fields (Name, Email, Message).');
       return;
     }
 
-    const emailBody = `Hi Saranya,\n\n${message}\n\nFrom: ${name}\nEmail: ${email}`;
+    const emailBody = `Hi Bharidey Saranya,\n\n${message}\n\n---\nFrom: ${name}\nEmail: ${email}`;
+    latestMessageText = `To: bharideysaranya0809@gmail.com\nSubject: [Portfolio Inquiry] ${subject}\n\n${emailBody}`;
+
     const encodedSubject = encodeURIComponent(`[Portfolio Inquiry] ${subject}`);
     const encodedBody = encodeURIComponent(emailBody);
 
@@ -415,7 +436,7 @@ function initContactForm() {
     if (mailtoLink) mailtoLink.href = mailtoUrl;
     if (userTitle) userTitle.textContent = `Thank You, ${name}!`;
     if (userDesc) {
-      userDesc.innerHTML = `Your message has been formatted. Choose an option below to deliver directly to <strong>bharideysaranya0809@gmail.com</strong>:`;
+      userDesc.innerHTML = `Your message has been composed. Choose an option below to deliver directly to <strong>bharideysaranya0809@gmail.com</strong>:`;
     }
 
     // Try background notify to /api/contact if available
@@ -427,14 +448,24 @@ function initContactForm() {
       }).catch(() => {});
     } catch (_) {}
 
-    // In-place UI transition: hide form, show success state without any blank pages
-    contactForm.style.display = 'none';
+    // In-place UI transition: hide form, show success state without ANY browser navigation
+    if (contactForm) {
+      contactForm.style.display = 'none';
+    }
     if (successBox) {
       successBox.style.display = 'block';
     }
 
-    showToast(`🎉 Message prepared! Choose Gmail or your mail app below.`);
-  });
+    showToast(`🎉 Message prepared! Click 'Send via Gmail Web' or choose your app.`);
+  }
+
+  if (submitBtn) {
+    submitBtn.addEventListener('click', processSubmission);
+  }
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', processSubmission);
+  }
 }
 
 /* ==========================================================================
