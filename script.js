@@ -361,39 +361,73 @@ function initContactForm() {
   const contactForm = document.getElementById('contact-form');
   const submitBtn = document.getElementById('submit-contact-btn');
 
+  // Enhance all "Contact Me" anchor links to smoothly scroll and focus the Name input
+  document.querySelectorAll('a[href="#contact"]').forEach(link => {
+    link.addEventListener('click', () => {
+      setTimeout(() => {
+        const nameInput = document.getElementById('contact-name');
+        if (nameInput) nameInput.focus();
+      }, 500);
+    });
+  });
+
   if (!contactForm) return;
 
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const name = document.getElementById('contact-name')?.value;
-    const email = document.getElementById('contact-email')?.value;
-    const subject = document.getElementById('contact-subject')?.value;
-    const message = document.getElementById('contact-message')?.value;
+    const name = document.getElementById('contact-name')?.value?.trim();
+    const email = document.getElementById('contact-email')?.value?.trim();
+    const subject = document.getElementById('contact-subject')?.value?.trim() || 'Portfolio Inquiry';
+    const message = document.getElementById('contact-message')?.value?.trim();
 
     if (!name || !email || !message) {
       showToast('Please fill in all required fields.');
       return;
     }
 
+    const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '<i class="fa-solid fa-paper-plane"></i> Send Message';
     if (submitBtn) {
       submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending message...';
       submitBtn.disabled = true;
     }
 
-    setTimeout(() => {
+    try {
+      // 1. Send asynchronously via FormSubmit to Bharidey Saranya's email
+      const response = await fetch('https://formsubmit.co/ajax/bharideysaranya0809@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          _subject: `[Portfolio Inquiry] ${subject} (from ${name})`,
+          message: message,
+          _captcha: 'false'
+        })
+      });
+
+      const data = await response.json();
+      if (response.ok && (data.success === 'true' || data.success === true)) {
+        showToast(`🎉 Message delivered directly to Saranya! Thank you, ${name}.`);
+        contactForm.reset();
+      } else {
+        throw new Error(data.message || 'Submission service error');
+      }
+    } catch (err) {
+      console.warn('FormSubmit AJAX fallback to mailto:', err);
+      // Seamless fallback: open default email client with details pre-filled
+      const mailtoUrl = `mailto:bharideysaranya0809@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Hi Saranya,\n\n${message}\n\nRegards,\n${name}\nEmail: ${email}`)}`;
+      window.location.href = mailtoUrl;
+      showToast(`Opening your email client to deliver to Saranya...`);
+    } finally {
       if (submitBtn) {
-        submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+        submitBtn.innerHTML = originalBtnHtml;
         submitBtn.disabled = false;
       }
-
-      showToast(`Thank you, ${name}! Your message has been prepared.`);
-      contactForm.reset();
-
-      // Also provide a direct mailto link fallback for instant response
-      const mailtoUrl = `mailto:bharideysaranya0809@gmail.com?subject=${encodeURIComponent(subject || 'Inquiry from Portfolio')}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
-      window.open(mailtoUrl, '_blank');
-    }, 600);
+    }
   });
 }
 

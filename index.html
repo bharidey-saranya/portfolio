@@ -779,7 +779,7 @@
                 <div class="channel-icon"><i class="fa-regular fa-envelope"></i></div>
                 <div class="channel-details">
                   <span class="channel-label">Email Address</span>
-                  <span class="channel-value" id="email-text">bharideysaranya0809@gmail.com</span>
+                  <a href="mailto:bharideysaranya0809@gmail.com" class="channel-value link" id="email-text">bharideysaranya0809@gmail.com</a>
                 </div>
                 <button class="copy-btn" data-copy="bharideysaranya0809@gmail.com" title="Copy Email">
                   <i class="fa-regular fa-copy"></i>
@@ -790,7 +790,7 @@
                 <div class="channel-icon"><i class="fa-solid fa-phone"></i></div>
                 <div class="channel-details">
                   <span class="channel-label">Phone Number</span>
-                  <span class="channel-value" id="phone-text">+91 6370003700</span>
+                  <a href="tel:+916370003700" class="channel-value link" id="phone-text">+91 6370003700</a>
                 </div>
                 <button class="copy-btn" data-copy="6370003700" title="Copy Phone Number">
                   <i class="fa-regular fa-copy"></i>
@@ -818,7 +818,10 @@
           <!-- Right: Interactive Message Form -->
           <div class="contact-form-panel glass-panel">
             <h3>Send a Message</h3>
-            <form id="contact-form" class="contact-form">
+            <form id="contact-form" class="contact-form" action="https://formsubmit.co/bharideysaranya0809@gmail.com" method="POST">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_subject" value="New Portfolio Inquiry for Bharidey Saranya">
+              
               <div class="form-group">
                 <label for="contact-name">Your Name</label>
                 <input type="text" id="contact-name" name="name" placeholder="John Doe" required>
@@ -835,9 +838,14 @@
                 <label for="contact-message">Message</label>
                 <textarea id="contact-message" name="message" rows="4" placeholder="Hello Saranya, we saw your backend expertise and would love to connect..." required></textarea>
               </div>
-              <button type="submit" class="btn btn-primary btn-block" id="submit-contact-btn">
-                <i class="fa-solid fa-paper-plane"></i> Send Message
-              </button>
+              <div class="form-actions-stack">
+                <button type="submit" class="btn btn-primary btn-block" id="submit-contact-btn">
+                  <i class="fa-solid fa-paper-plane"></i> Send Message
+                </button>
+                <a href="mailto:bharideysaranya0809@gmail.com" class="btn btn-secondary btn-block" id="direct-email-btn" style="text-align: center;">
+                  <i class="fa-regular fa-envelope"></i> Or Email Directly
+                </a>
+              </div>
             </form>
           </div>
         </div>
