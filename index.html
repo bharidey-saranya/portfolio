@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bharidey Saranya | PHP Backend Developer & Database Specialist</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Bharidey Saranya - Experienced PHP Backend Developer with 2+ years of experience in Core PHP, MySQL query optimization, RESTful APIs, enterprise healthcare (Medicover), and warehouse systems.">
+  <meta name="keywords" content="Bharidey Saranya, PHP Backend Developer, Core PHP, MySQL, RESTful APIs, Healthcare ERP, Warehouse Management, Node.js, Express, Hyderabad, Developer Portfolio">
+  <meta name="author" content="Bharidey Saranya">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Bharidey Saranya | PHP Backend Developer">
+  <meta property="og:description" content="Backend Developer with 2+ years building high-throughput APIs, healthcare workflows, and warehouse systems.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/backend_hero.jpg">
+
+  <!-- Google Fonts: Outfit (Modern clean sans) & JetBrains Mono (Backend code style) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for verified developer & tech icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Animated Glowing Orbs -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-wrapper">
+    <nav class="navbar" id="navbar">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-bracket">&lt;</span>
+        <span class="brand-name">Saranya</span>
+        <span class="brand-role">.backend</span>
+        <span class="brand-bracket">/&gt;</span>
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#about" class="nav-item">About</a>
+        <a href="#experience" class="nav-item">Experience</a>
+        <a href="#projects" class="nav-item">Projects</a>
+        <a href="#api-playground" class="nav-item">API Playground</a>
+        <a href="#skills" class="nav-item">Skills</a>
+        <a href="#contact" class="nav-item">Contact</a>
+        <button class="btn btn-secondary nav-cta-resume" id="open-resume-btn">
+          <i class="fa-solid fa-file-invoice"></i> Resume
+        </button>
+      </div>
+
+      <div class="nav-actions">
+        <a href="https://github.com/bharidey-saranya" target="_blank" rel="noopener" class="icon-link" title="GitHub Profile" id="nav-github-link">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="status-badge" id="system-status-pill">
+            <span class="pulse-dot"></span>
+            <span class="status-text">Server Status: 200 OK | Open to Backend Roles</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Bharidey Saranya</span>
+            <br>
+            <span class="typing-container">
+              <span class="typing-text" id="typing-role">PHP Backend Developer</span>
+              <span class="cursor">|</span>
+            </span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Specializing in engineering high-throughput <strong>RESTful APIs</strong>, optimizing mission-critical 
+            <strong>MySQL database transactions</strong>, and building enterprise <strong>healthcare, warehouse, 
+            and supply-chain backend workflows</strong> with over 2 years of professional experience.
+          </p>
+
+          <div class="tech-pill-list">
+            <span class="tech-pill"><i class="fa-brands fa-php"></i> Core PHP</span>
+            <span class="tech-pill"><i class="fa-solid fa-database"></i> MySQL Query Optimization</span>
+            <span class="tech-pill"><i class="fa-solid fa-network-wired"></i> RESTful APIs</span>
+            <span class="tech-pill"><i class="fa-brands fa-node-js"></i> Node.js & Express</span>
+            <span class="tech-pill"><i class="fa-solid fa-boxes-stacked"></i> Inventory & ERP</span>
+          </div>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa-solid fa-laptop-code"></i> View Projects
+            </a>
+            <a href="#api-playground" class="btn btn-secondary">
+              <i class="fa-solid fa-terminal"></i> Test Live APIs
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i class="fa-regular fa-envelope"></i> Contact Me
+            </a>
+          </div>
+
+          <div class="hero-social-links">
+            <a href="mailto:bharideysaranya0809@gmail.com" class="social-chip" id="hero-email-chip">
+              <i class="fa-regular fa-envelope"></i> bharideysaranya0809@gmail.com
+            </a>
+            <a href="tel:+916370003700" class="social-chip" id="hero-phone-chip">
+              <i class="fa-solid fa-phone"></i> +91 6370003700
+            </a>
+            <span class="social-chip location-chip">
+              <i class="fa-solid fa-location-dot"></i> Hyderabad, India
+            </span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="terminal-card glass-panel">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="terminal-title">saranya@backend-server:~$</div>
+              <div class="terminal-badge">PHP 8.2 / MySQL 8.0</div>
+            </div>
+            <div class="terminal-body">
+              <div class="server-image-container">
+                <img src="assets/backend_hero.jpg" alt="Backend Architecture and Relational Database Systems" class="server-visual-img" id="hero-arch-img">
+              </div>
+              <div class="terminal-code">
+                <p class="code-line"><span class="cmd-prompt">$</span> <span class="cmd">curl -X GET</span> https://api.saranya.dev/v1/profile</p>
+                <div class="code-output">
+                  <span class="json-brace">{</span><br>
+                  &nbsp;&nbsp;<span class="json-key">"developer"</span>: <span class="json-str">"Bharidey Saranya"</span>,<br>
+                  &nbsp;&nbsp;<span class="json-key">"role"</span>: <span class="json-str">"Backend Developer"</span>,<br>
+                  &nbsp;&nbsp;<span class="json-key">"currentCompany"</span>: <span class="json-str">"Medicover Corporate Office"</span>,<br>
+                  &nbsp;&nbsp;<span class="json-key">"coreCompetencies"</span>: [<span class="json-str">"PHP"</span>, <span class="json-str">"MySQL"</span>, <span class="json-str">"REST APIs"</span>, <span class="json-str">"Query Tuning"</span>],<br>
+                  &nbsp;&nbsp;<span class="json-key">"databaseLatency"</span>: <span class="json-num">12</span>, <span class="json-comment">// ms</span><br>
+                  &nbsp;&nbsp;<span class="json-key">"status"</span>: <span class="json-str">"Available for Immediate Impact"</span><br>
+                  <span class="json-brace">}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY METRICS STATS BAR -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card glass-panel">
+            <div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="stat-number">2+</div>
+            <div class="stat-label">Years Backend Experience</div>
+            <div class="stat-sub">Healthcare & Warehouse ERPs</div>
+          </div>
+          <div class="stat-card glass-panel">
+            <div class="stat-icon"><i class="fa-solid fa-code-merge"></i></div>
+            <div class="stat-number">50+</div>
+            <div class="stat-label">RESTful APIs Designed</div>
+            <div class="stat-sub">Procurement, Orders, Invoices</div>
+          </div>
+          <div class="stat-card glass-panel">
+            <div class="stat-icon"><i class="fa-solid fa-database"></i></div>
+            <div class="stat-number">100k+</div>
+            <div class="stat-label">Transactions Processed</div>
+            <div class="stat-sub">Optimized MySQL Queries</div>
+          </div>
+          <div class="stat-card glass-panel">
+            <div class="stat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="stat-number">99.9%</div>
+            <div class="stat-label">Production Reliability</div>
+            <div class="stat-sub">Validation & Secure Auth</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">&lt;overview&gt;</span>
+          <h2 class="section-title">Architecting Enterprise Data & APIs</h2>
+          <p class="section-desc">Engineering resilient, performant backend solutions that drive business operations.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card glass-panel">
+            <div class="about-icon-header">
+              <i class="fa-solid fa-hospital-user"></i>
+            </div>
+            <h3>Enterprise Healthcare Systems</h3>
+            <p>
+              At <strong>Medicover</strong>, I build and maintain backend services for Techpro, orchestrating end-to-end 
+              workflows for patient indents, pharmacy inventory, sales, and procurement. Every operation is built for absolute precision and zero data loss.
+            </p>
+            <ul class="about-features">
+              <li><i class="fa-solid fa-check"></i> Patient indents & pharmacy dispensing</li>
+              <li><i class="fa-solid fa-check"></i> Stock issues, returns, and inventory counts</li>
+              <li><i class="fa-solid fa-check"></i> Automated GST and tax invoicing engines</li>
+            </ul>
+          </div>
+
+          <div class="about-card glass-panel">
+            <div class="about-icon-header">
+              <i class="fa-solid fa-warehouse"></i>
+            </div>
+            <h3>Supply Chain & Warehouse Logic</h3>
+            <p>
+              At <strong>Insource Software</strong>, I automated end-to-end warehouse pipelines for Ashraya and SVS. 
+              Designed business workflows managing the full lifecycle from vendor Purchase Orders to customer Delivery Challans.
+            </p>
+            <ul class="about-features">
+              <li><i class="fa-solid fa-check"></i> PO to GRN (Goods Receipt Note) verification</li>
+              <li><i class="fa-solid fa-check"></i> Delivery Challans, NRDC & Sales Returns</li>
+              <li><i class="fa-solid fa-check"></i> High-volume warehouse inventory tracking</li>
+            </ul>
+          </div>
+
+          <div class="about-card glass-panel">
+            <div class="about-icon-header">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <h3>High-Performance MySQL Optimization</h3>
+            <p>
+              Proficient in investigating slow queries, executing `EXPLAIN` analysis, restructuring normalized schemas, 
+              adding compound indexes, and ensuring transactional atomicity for high-concurrency environments.
+            </p>
+            <ul class="about-features">
+              <li><i class="fa-solid fa-check"></i> Indexing strategies & query execution tuning</li>
+              <li><i class="fa-solid fa-check"></i> ACID transactions with rollback safety</li>
+              <li><i class="fa-solid fa-check"></i> Data validation & audit reporting pipelines</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE TIMELINE -->
+    <section class="section experience-section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">&lt;career_path&gt;</span>
+          <h2 class="section-title">Work Experience</h2>
+          <p class="section-desc">Hands-on production track record in enterprise applications</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Medicover -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title">Backend Developer</h3>
+                  <div class="company-info">
+                    <span class="company-name"><i class="fa-solid fa-building"></i> Medicover Corporate Office</span>
+                    <span class="company-loc"><i class="fa-solid fa-location-dot"></i> Hyderabad, India</span>
+                  </div>
+                </div>
+                <div class="timeline-badge current">Aug 2024 – Present</div>
+              </div>
+              <p class="timeline-summary">
+                Core backend developer for <strong>Techpro</strong>, an enterprise healthcare ecosystem managing multi-branch procurement, inventory, pharmacy, sales, and clinical workflows.
+              </p>
+              <ul class="timeline-bullets">
+                <li>Designed and deployed secure RESTful APIs for purchase orders, Goods Receipt Notes (GRNs), stock issues, returns, patient indents, and order processing.</li>
+                <li>Engineered and optimized complex MySQL queries, reducing latency on high-volume transactional reporting tables and real-time inventory lookups.</li>
+                <li>Implemented enterprise business rules for automated GST / tax computations and accurate multi-tier invoice generation.</li>
+                <li>Troubleshot production and database-level anomalies following strict validation, authentication, and error-handling standards.</li>
+                <li>Collaborated closely with cross-functional and clinical teams, translating complex functional healthcare requirements into clean server-side code.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span>Core PHP</span>
+                <span>MySQL</span>
+                <span>RESTful APIs</span>
+                <span>GST Invoicing</span>
+                <span>Healthcare Techpro</span>
+                <span>Query Optimization</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Insource Software -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title">Backend Developer</h3>
+                  <div class="company-info">
+                    <span class="company-name"><i class="fa-solid fa-building"></i> Insource Software Private Limited</span>
+                    <span class="company-loc"><i class="fa-solid fa-location-dot"></i> Hyderabad, India</span>
+                  </div>
+                </div>
+                <div class="timeline-badge">Aug 2023 – Aug 2024</div>
+              </div>
+              <p class="timeline-summary">
+                Built and maintained backend services for <strong>Ashraya</strong> and <strong>SVS</strong> Warehouse Management Systems (WMS), driving procurement, inventory audit, and fulfillment.
+              </p>
+              <ul class="timeline-bullets">
+                <li>Constructed complete end-to-end API workflows for Purchase Orders, GRNs, Invoices, Delivery Challans, NRDC, Sales Returns, and stock reconciliations.</li>
+                <li>Designed normalized database structures and tuned indexing on millions of stock movement entries to prevent inventory drift.</li>
+                <li>Automated warehouse logistics via event-driven API modules, resolving application and database performance bottlenecks.</li>
+                <li>Conducted rigorous data validation to ensure strict discrepancy-free handoffs between warehouse floor and accounting systems.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span>Core PHP</span>
+                <span>MySQL</span>
+                <span>Warehouse WMS</span>
+                <span>Supply Chain</span>
+                <span>Delivery Challans</span>
+                <span>Stock Auditing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">&lt;code_in_action&gt;</span>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-desc">Production-grade enterprise modules and full-stack applications</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Healthcare Techpro -->
+          <div class="project-card glass-panel">
+            <div class="project-banner healthcare-gradient">
+              <div class="project-type-badge"><i class="fa-solid fa-hospital"></i> Enterprise Healthcare</div>
+              <div class="project-status-pill">In Production @ Medicover</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Techpro Healthcare Backend Engine</h3>
+              <p class="project-desc">
+                Centralized backend platform orchestrating procurement, pharmacy dispensing, inventory stock levels, and patient service requests across hospitals.
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item">
+                  <i class="fa-solid fa-receipt"></i>
+                  <span><strong>GST & Invoicing:</strong> Automated multi-rate GST, discount tiers, and hospital billing invoices.</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fa-solid fa-truck-ramp-box"></i>
+                  <span><strong>Stock Issues & GRN:</strong> Real-time decrementing and reconciliation preventing stockouts.</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fa-solid fa-gauge-high"></i>
+                  <span><strong>High-Volume Queries:</strong> Optimized indexing for thousands of daily patient indents.</span>
+                </div>
+              </div>
+              <div class="project-tech-stack">
+                <span>PHP</span>
+                <span>MySQL</span>
+                <span>REST API</span>
+                <span>Data Validation</span>
+                <span>Transaction Rollback</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn btn-sm btn-outline test-endpoint-btn" data-endpoint="healthcare">
+                  <i class="fa-solid fa-play"></i> Test Endpoint
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Warehouse WMS -->
+          <div class="project-card glass-panel">
+            <div class="project-banner warehouse-gradient">
+              <div class="project-type-badge"><i class="fa-solid fa-boxes-stacked"></i> Supply Chain & WMS</div>
+              <div class="project-status-pill">Enterprise Ashraya & SVS</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Ashraya & SVS Warehouse Management</h3>
+              <p class="project-desc">
+                Mission-critical warehouse logistics system managing complete lifecycle tracking from vendor purchase orders to final retail delivery.
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item">
+                  <i class="fa-solid fa-file-invoice-dollar"></i>
+                  <span><strong>End-to-End Workflow:</strong> Seamless chain: PO &rarr; GRN &rarr; Challan &rarr; NRDC &rarr; Invoices.</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fa-solid fa-arrow-rotate-left"></i>
+                  <span><strong>Sales Returns & Stock:</strong> Real-time restocking logic with verified discrepancy reporting.</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fa-solid fa-database"></i>
+                  <span><strong>Large-scale Data:</strong> Query-tuned tables handling multi-facility inventory tracking.</span>
+                </div>
+              </div>
+              <div class="project-tech-stack">
+                <span>PHP</span>
+                <span>MySQL</span>
+                <span>API Automation</span>
+                <span>Supply Chain</span>
+                <span>Warehouse Logistics</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn btn-sm btn-outline test-endpoint-btn" data-endpoint="warehouse">
+                  <i class="fa-solid fa-play"></i> Test Endpoint
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: School Management System -->
+          <div class="project-card glass-panel">
+            <div class="project-banner school-gradient">
+              <div class="project-type-badge"><i class="fa-solid fa-graduation-cap"></i> Full-Stack System</div>
+              <div class="project-status-pill">Open Source on GitHub</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Full-Stack School Management System</h3>
+              <p class="project-desc">
+                Comprehensive school administration portal with multi-tier role-based access control (Admin, Teachers, Students, Parents) and real-time reports.
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item">
+                  <i class="fa-solid fa-user-shield"></i>
+                  <span><strong>Role-Based Access:</strong> Granular permissions, JWT auth, and protected API routes.</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fa-solid fa-calendar-check"></i>
+                  <span><strong>Core Modules:</strong> Classes, Attendance tracking, Exam scheduling, Fee collection & Leave.</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fa-solid fa-chart-line"></i>
+                  <span><strong>Reports Dashboard:</strong> Real-time metrics powered by Express.js and MySQL data layer.</span>
+                </div>
+              </div>
+              <div class="project-tech-stack">
+                <span>Node.js</span>
+                <span>Express.js</span>
+                <span>MySQL</span>
+                <span>JWT Auth</span>
+                <span>RESTful APIs</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/bharidey-saranya/School_management" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
+                  <i class="fa-brands fa-github"></i> View GitHub Repo
+                </a>
+                <button class="btn btn-sm btn-outline test-endpoint-btn" data-endpoint="school">
+                  <i class="fa-solid fa-play"></i> Test Auth API
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE BACKEND API PLAYGROUND -->
+    <section class="section playground-section" id="api-playground">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">&lt;interactive_backend&gt;</span>
+          <h2 class="section-title">Backend API Inspector & Playground</h2>
+          <p class="section-desc">Test real simulated RESTful endpoints, inspect SQL queries, execution latency, and JSON payloads</p>
+        </div>
+
+        <div class="playground-card glass-panel">
+          <div class="playground-toolbar">
+            <div class="endpoint-selector-tabs" id="api-tabs">
+              <button class="api-tab active" data-target="endpoint-healthcare">
+                <span class="method get">GET</span>
+                <span class="endpoint-name">/api/v1/patient-indent/IND-8921</span>
+              </button>
+              <button class="api-tab" data-target="endpoint-warehouse">
+                <span class="method post">POST</span>
+                <span class="endpoint-name">/api/v1/warehouse/grn/verify</span>
+              </button>
+              <button class="api-tab" data-target="endpoint-gst">
+                <span class="method post">POST</span>
+                <span class="endpoint-name">/api/v1/billing/gst-invoice</span>
+              </button>
+              <button class="api-tab" data-target="endpoint-school">
+                <span class="method post">POST</span>
+                <span class="endpoint-name">/api/v1/auth/jwt-login</span>
+              </button>
+            </div>
+            <button class="btn btn-sm btn-primary run-api-btn" id="run-current-api-btn">
+              <i class="fa-solid fa-bolt"></i> Send Request
+            </button>
+          </div>
+
+          <!-- Playground Details Panel -->
+          <div class="playground-body">
+            <div class="playground-header-info">
+              <div class="info-group">
+                <span class="info-label">HTTP Status:</span>
+                <span class="badge badge-success" id="api-status-code">200 OK</span>
+              </div>
+              <div class="info-group">
+                <span class="info-label">Execution Time:</span>
+                <span class="badge badge-latency" id="api-latency">18.4 ms</span>
+              </div>
+              <div class="info-group">
+                <span class="info-label">Database Driver:</span>
+                <span class="badge badge-tech">MySQL PDO (Prepared)</span>
+              </div>
+              <div class="info-group">
+                <span class="info-label">Rate Limit:</span>
+                <span class="badge badge-tech">100 req/min (Active)</span>
+              </div>
+            </div>
+
+            <div class="playground-views">
+              <!-- Left: SQL Query & Request Headers -->
+              <div class="playground-panel">
+                <div class="panel-tab-title">
+                  <i class="fa-solid fa-database"></i> Executed MySQL Query (Optimized & Indexed)
+                </div>
+                <div class="code-block" id="api-sql-query">
+<span class="sql-kw">SELECT</span> 
+    pi.indent_id, pi.patient_id, p.full_name, 
+    pi.ward_no, pi.status,
+    it.item_code, it.item_name, pii.quantity_requested,
+    inv.available_stock
+<span class="sql-kw">FROM</span> patient_indents pi
+<span class="sql-kw">JOIN</span> patients p <span class="sql-kw">ON</span> p.id = pi.patient_id
+<span class="sql-kw">JOIN</span> patient_indent_items pii <span class="sql-kw">ON</span> pii.indent_id = pi.indent_id
+<span class="sql-kw">JOIN</span> items it <span class="sql-kw">ON</span> it.id = pii.item_id
+<span class="sql-kw">JOIN</span> inventory inv <span class="sql-kw">ON</span> inv.item_id = it.id <span class="sql-kw">AND</span> inv.branch_id = pi.branch_id
+<span class="sql-kw">WHERE</span> pi.indent_code = <span class="sql-val">'IND-8921'</span> 
+<span class="sql-kw">AND</span> pi.is_deleted = 0
+<span class="sql-comment">/* EXPLAIN: Using index condition, 0.0012 sec scan */</span>;
+                </div>
+              </div>
+
+              <!-- Right: JSON Response Body -->
+              <div class="playground-panel">
+                <div class="panel-tab-title">
+                  <i class="fa-solid fa-code"></i> JSON Response Payload
+                </div>
+                <div class="code-block" id="api-json-response">
+<span class="json-brace">{</span>
+  <span class="json-key">"status"</span>: <span class="json-num">200</span>,
+  <span class="json-key">"success"</span>: <span class="json-bool">true</span>,
+  <span class="json-key">"timestamp"</span>: <span class="json-str">"2026-09-18T10:30:15Z"</span>,
+  <span class="json-key">"data"</span>: <span class="json-brace">{</span>
+    <span class="json-key">"indentCode"</span>: <span class="json-str">"IND-8921"</span>,
+    <span class="json-key">"patient"</span>: <span class="json-brace">{</span>
+      <span class="json-key">"uhid"</span>: <span class="json-str">"MED-HYD-10294"</span>,
+      <span class="json-key">"name"</span>: <span class="json-str">"Rajesh Verma"</span>,
+      <span class="json-key">"ward"</span>: <span class="json-str">"ICU - Bed 04"</span>
+    <span class="json-brace">}</span>,
+    <span class="json-key">"medications"</span>: [
+      <span class="json-brace">{</span>
+        <span class="json-key">"itemCode"</span>: <span class="json-str">"MED-PARACET-IV"</span>,
+        <span class="json-key">"itemName"</span>: <span class="json-str">"Paracetamol IV 100ml"</span>,
+        <span class="json-key">"qtyRequested"</span>: <span class="json-num">2</span>,
+        <span class="json-key">"stockAvailable"</span>: <span class="json-num">140</span>,
+        <span class="json-key">"dispenseStatus"</span>: <span class="json-str">"ALLOCATED"</span>
+      <span class="json-brace">}</span>
+    ],
+    <span class="json-key">"approvals"</span>: <span class="json-brace">{</span>
+      <span class="json-key">"verifiedByPharmacist"</span>: <span class="json-bool">true</span>,
+      <span class="json-key">"digitalSign"</span>: <span class="json-str">"AUTH-RX-99214"</span>
+    <span class="json-brace">}</span>
+  <span class="json-brace">}</span>
+<span class="json-brace">}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS MATRIX -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">&lt;tech_stack&gt;</span>
+          <h2 class="section-title">Technical Expertise</h2>
+          <p class="section-desc">Tools, languages, and architectures honed across production environments</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Backend & Database -->
+          <div class="skill-category-card glass-panel">
+            <div class="skill-category-header">
+              <div class="category-icon"><i class="fa-solid fa-server"></i></div>
+              <h3>Backend & Database</h3>
+            </div>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Core PHP</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 92%;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">MySQL & Query Optimization</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">RESTful API Design & Security</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 88%;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Node.js & Express.js</span>
+                  <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 78%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Enterprise Domain & Business Logic -->
+          <div class="skill-category-card glass-panel">
+            <div class="skill-category-header">
+              <div class="category-icon"><i class="fa-solid fa-cubes"></i></div>
+              <h3>Enterprise Business Logic</h3>
+            </div>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Healthcare ERP (Techpro)</span>
+                  <span class="skill-level">Proficient</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">WMS & Supply Chain (PO, GRN, Challan)</span>
+                  <span class="skill-level">Proficient</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 92%;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">GST & Multi-rate Invoicing Engines</span>
+                  <span class="skill-level">Proficient</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Data Validation & Audit Reporting</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 88%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Languages, Tools & Practices -->
+          <div class="skill-category-card glass-panel">
+            <div class="skill-category-header">
+              <div class="category-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+              <h3>Languages & DevOps Tools</h3>
+            </div>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Git (Branching, Merges, Remotes)</span>
+                  <span class="skill-level">Proficient</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 88%;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">SQL (DDL, DML, Complex Joins, Indexing)</span>
+                  <span class="skill-level">Expert</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 92%;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">JavaScript, HTML5, CSS3</span>
+                  <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Server Troubleshooting & Python (Basics)</span>
+                  <span class="skill-level">Working Knowledge</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soft Skills / Strengths Pill Row -->
+        <div class="strengths-wrapper glass-panel">
+          <span class="strengths-title"><i class="fa-solid fa-medal"></i> Core Strengths:</span>
+          <div class="strengths-badges">
+            <span class="strength-tag">Ownership of Deliverables</span>
+            <span class="strength-tag">Cross-functional Team Collaboration</span>
+            <span class="strength-tag">Problem Solving Under Pressure</span>
+            <span class="strength-tag">Adaptable to Changing Requirements</span>
+            <span class="strength-tag">Clear Stakeholder Communication</span>
+            <span class="strength-tag">Deadline-driven Execution</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section class="section education-section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">&lt;academics&gt;</span>
+          <h2 class="section-title">Education</h2>
+          <p class="section-desc">Academic foundation in Computer Applications and Software Development</p>
+        </div>
+
+        <div class="education-card glass-panel">
+          <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="edu-details">
+            <div class="edu-degree-row">
+              <h3 class="edu-degree">Bachelor of Computer Applications (BCA)</h3>
+              <span class="edu-date">Graduated: June 2021</span>
+            </div>
+            <div class="edu-college"><i class="fa-solid fa-landmark"></i> Aditya Degree College, Srikakulam, Andhra Pradesh</div>
+            <p class="edu-desc">
+              Rigorous foundation in computer systems, relational database management systems (RDBMS), object-oriented programming, data structures, algorithms, and software engineering principles.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">&lt;get_in_touch&gt;</span>
+          <h2 class="section-title">Let's Connect</h2>
+          <p class="section-desc">Looking for a high-impact PHP Backend Developer? Reach out directly or drop a message below.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left: Contact Details & Quick Copy -->
+          <div class="contact-info-panel glass-panel">
+            <h3>Direct Contact Channels</h3>
+            <p>I am actively open to backend developer roles, discussing API architecture, and collaborating on high-volume systems.</p>
+
+            <div class="contact-channels">
+              <div class="channel-card">
+                <div class="channel-icon"><i class="fa-regular fa-envelope"></i></div>
+                <div class="channel-details">
+                  <span class="channel-label">Email Address</span>
+                  <span class="channel-value" id="email-text">bharideysaranya0809@gmail.com</span>
+                </div>
+                <button class="copy-btn" data-copy="bharideysaranya0809@gmail.com" title="Copy Email">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+
+              <div class="channel-card">
+                <div class="channel-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="channel-details">
+                  <span class="channel-label">Phone Number</span>
+                  <span class="channel-value" id="phone-text">+91 6370003700</span>
+                </div>
+                <button class="copy-btn" data-copy="6370003700" title="Copy Phone Number">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+
+              <div class="channel-card">
+                <div class="channel-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="channel-details">
+                  <span class="channel-label">Current Location</span>
+                  <span class="channel-value">Hyderabad, Telangana, India</span>
+                </div>
+              </div>
+
+              <div class="channel-card">
+                <div class="channel-icon"><i class="fa-brands fa-github"></i></div>
+                <div class="channel-details">
+                  <span class="channel-label">GitHub Profile</span>
+                  <a href="https://github.com/bharidey-saranya" target="_blank" rel="noopener" class="channel-value link">github.com/bharidey-saranya</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Message Form -->
+          <div class="contact-form-panel glass-panel">
+            <h3>Send a Message</h3>
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" name="name" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Your Email</label>
+                <input type="email" id="contact-email" name="email" placeholder="john@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-subject">Subject</label>
+                <input type="text" id="contact-subject" name="subject" placeholder="Opportunity: Backend Developer Role" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" rows="4" placeholder="Hello Saranya, we saw your backend expertise and would love to connect..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block" id="submit-contact-btn">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RESUME MODAL -->
+  <div class="modal-backdrop" id="resume-modal" aria-hidden="true">
+    <div class="modal-dialog glass-panel">
+      <div class="modal-header">
+        <h2><i class="fa-solid fa-file-invoice"></i> Bharidey Saranya — Resume</h2>
+        <div class="modal-actions">
+          <button class="btn btn-sm btn-primary" id="print-resume-btn">
+            <i class="fa-solid fa-print"></i> Print / Save PDF
+          </button>
+          <button class="modal-close-btn" id="close-resume-btn" aria-label="Close Resume Modal">&times;</button>
+        </div>
+      </div>
+      <div class="modal-body" id="printable-resume">
+        <div class="resume-sheet">
+          <div class="resume-header">
+            <h1>BHARIDEY SARANYA</h1>
+            <div class="resume-subtitle">PHP Backend Developer</div>
+            <div class="resume-contact-line">
+              <span>Hyderabad, India</span> &bull; 
+              <span>6370003700</span> &bull; 
+              <span>bharideysaranya0809@gmail.com</span> &bull; 
+              <span>github.com/bharidey-saranya</span>
+            </div>
+          </div>
+
+          <div class="resume-section">
+            <div class="resume-sec-title">PROFESSIONAL SUMMARY</div>
+            <p>
+              PHP Backend Developer with over 2 years of experience building, maintaining, and optimizing server-side applications using Core PHP and MySQL. Proven track record designing RESTful APIs, managing database tables, optimizing complex queries, and troubleshooting production issues across enterprise healthcare, warehouse, and supply-chain systems. Comfortable coordinating with development teams and non-technical stakeholders, with hands-on exposure to reporting, data validation, and deployment support.
+            </p>
+          </div>
+
+          <div class="resume-section">
+            <div class="resume-sec-title">TECHNICAL SKILLS</div>
+            <div class="resume-skills-grid">
+              <div><strong>Backend & Database:</strong> Core PHP, MySQL / Query Optimization, RESTful API Development, Node.js, Express.js</div>
+              <div><strong>Languages:</strong> PHP, SQL, JavaScript, HTML, Basic Python</div>
+              <div><strong>Tools & Practices:</strong> Git (Version Control), Data Validation & Reporting, Server-side Troubleshooting, Inventory & Supply Chain Systems</div>
+            </div>
+          </div>
+
+          <div class="resume-section">
+            <div class="resume-sec-title">WORK EXPERIENCE</div>
+            <div class="resume-job">
+              <div class="resume-job-header">
+                <strong>Backend Developer — Medicover Corporate Office</strong>
+                <span>Aug 2024 – Present | Hyderabad, India</span>
+              </div>
+              <ul>
+                <li>Developed and maintained backend services in PHP and MySQL for Techpro, an enterprise healthcare application covering procurement, inventory, pharmacy, sales, and patient workflows.</li>
+                <li>Designed RESTful APIs for purchase orders, GRNs, inventory transactions, patient indents, stock issues, returns, and order processing.</li>
+                <li>Regularly created and updated database tables and validated data to ensure accuracy across inventory, purchasing, and reporting modules.</li>
+                <li>Optimized complex MySQL queries and database operations for large-volume transactional data, and implemented GST/tax calculations, invoice generation, and purchasing/inventory business rules.</li>
+                <li>Troubleshot production and database-level issues, following secure API practices (validation, authentication, error handling) while delivering backend enhancements as requirements changed.</li>
+                <li>Coordinated with cross-functional and business teams, communicating technical solutions clearly to non-technical stakeholders.</li>
+              </ul>
+            </div>
+
+            <div class="resume-job">
+              <div class="resume-job-header">
+                <strong>Backend Developer — Insource Software Private Limited</strong>
+                <span>Aug 2023 – Aug 2024 | Hyderabad, India</span>
+              </div>
+              <ul>
+                <li>Built and maintained RESTful APIs in PHP and MySQL for the Ashraya and SVS warehouse management systems, covering purchasing, inventory, and order-management workflows.</li>
+                <li>Implemented end-to-end workflows for Purchase Orders, GRNs, Invoices, Delivery Challans, NRDC, Sales Returns, and stock transactions.</li>
+                <li>Designed and optimized MySQL queries and managed database tables for complex inventory transactions and large volumes of warehouse data.</li>
+                <li>Automated warehouse and supply-chain processes through API-driven workflows; investigated and resolved API, database, and application-level issues, collaborating with frontend and business teams to enhance modules.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="resume-section">
+            <div class="resume-sec-title">PERSONAL PROJECT</div>
+            <div class="resume-job">
+              <div class="resume-job-header">
+                <strong>School Management System — Individual Project</strong>
+                <span>Node.js, Express, MySQL</span>
+              </div>
+              <ul>
+                <li>Built a full-stack School Management System (role-based access for Admin, Teachers, Students, Parents) covering Classes, Attendance, Exams, Fees, and Leave Management, with secure authentication.</li>
+                <li>Developed a Reports and Dashboard module for real-time visibility, structured with RESTful Express APIs and a MySQL data layer.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="resume-section">
+            <div class="resume-sec-title">EDUCATION</div>
+            <div class="resume-job-header">
+              <strong>Bachelor of Computer Applications — Aditya Degree College, Srikakulam, AP</strong>
+              <span>Jun 2021</span>
+            </div>
+          </div>
+
+          <div class="resume-section">
+            <div class="resume-sec-title">STRENGTHS</div>
+            <p>
+              Team collaboration & cross-functional communication &bull; Ownership of deliverables &bull; Adaptable to changing requirements &bull; Time management under deadlines &bull; Problem-solving under pressure &bull; Clear communication with non-technical stakeholders
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <a href="#hero" class="footer-brand">&lt;Bharidey.Saranya /&gt;</a>
+        <p>PHP Backend Developer &bull; Hyderabad, India &bull; 6370003700</p>
+      </div>
+      <div class="footer-right">
+        <a href="https://github.com/bharidey-saranya" target="_blank" rel="noopener" class="footer-link">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a href="mailto:bharideysaranya0809@gmail.com" class="footer-link">
+          <i class="fa-regular fa-envelope"></i> Email
+        </a>
+        <a href="tel:+916370003700" class="footer-link">
+          <i class="fa-solid fa-phone"></i> Call
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Bharidey Saranya. Engineered for High-Throughput Performance & Zero Downtime.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
