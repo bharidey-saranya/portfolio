@@ -1473,6 +1473,69 @@ body {
   margin-top: 6px;
 }
 
+.contact-quick-options {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.contact-quick-options .btn {
+  flex: 1;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.88rem;
+  padding: 10px 14px;
+}
+
+.contact-success-card {
+  padding: 32px 20px;
+  text-align: center;
+  border-radius: var(--radius-md);
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+.contact-success-card .success-icon {
+  width: 54px;
+  height: 54px;
+  line-height: 54px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--accent-emerald);
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-success-card h4 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.contact-success-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.contact-success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 500px) {
+  .contact-success-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
 /* ==========================================================================
    RESUME MODAL & PRINT STYLES
    ========================================================================== */

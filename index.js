@@ -59,6 +59,35 @@ function handler(req, res) {
     reqPath = '/index.html';
   }
 
+  // Handle API contact submissions
+  if (req.method === 'POST' && (reqPath === '/api/contact' || reqPath === '/api/contact/')) {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', () => {
+      try {
+        const data = JSON.parse(body || '{}');
+        console.log('📬 [Portfolio Contact Inquiry Received]:', {
+          name: data.name,
+          email: data.email,
+          subject: data.subject,
+          timestamp: new Date().toISOString()
+        });
+        res.writeHead(200, {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        });
+        res.end(JSON.stringify({
+          success: true,
+          message: `Inquiry from ${data.name || 'Visitor'} logged successfully.`
+        }));
+      } catch (err) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: false, message: 'Invalid JSON payload' }));
+      }
+    });
+    return;
+  }
+
   // Security: Clean and normalize path to avoid traversal attacks
   const safeSuffix = path.normalize(reqPath).replace(/^(\.\.[\/\\])+/, '').replace(/^[/\\]+/, '');
 

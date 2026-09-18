@@ -818,17 +818,34 @@
           <!-- Right: Interactive Message Form -->
           <div class="contact-form-panel glass-panel">
             <h3>Send a Message</h3>
-            <form id="contact-form" class="contact-form" action="https://formsubmit.co/bharideysaranya0809@gmail.com" method="POST">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_subject" value="New Portfolio Inquiry for Bharidey Saranya">
-              
+
+            <!-- Success Confirmation Card (shown after sending) -->
+            <div id="contact-success-box" class="contact-success-card" style="display: none;">
+              <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+              <h4 id="success-user-title">Message Ready to Deliver!</h4>
+              <p id="success-user-desc">Thank you! Click below to send directly via Gmail or your preferred email application to <strong>bharideysaranya0809@gmail.com</strong>.</p>
+              <div class="contact-success-actions">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" id="success-gmail-link">
+                  <i class="fa-brands fa-google"></i> Send via Gmail Web
+                </a>
+                <a href="#" class="btn btn-outline btn-sm" id="success-mailto-link">
+                  <i class="fa-solid fa-envelope"></i> Default Mail App
+                </a>
+                <button type="button" class="btn btn-secondary btn-sm" id="reset-contact-form-btn">
+                  <i class="fa-solid fa-rotate-left"></i> Send Another
+                </button>
+              </div>
+            </div>
+
+            <!-- Main Interactive Form -->
+            <form id="contact-form" class="contact-form" autocomplete="on">
               <div class="form-group">
                 <label for="contact-name">Your Name</label>
-                <input type="text" id="contact-name" name="name" placeholder="John Doe" required>
+                <input type="text" id="contact-name" name="name" placeholder="John Doe" required autocomplete="name">
               </div>
               <div class="form-group">
                 <label for="contact-email">Your Email</label>
-                <input type="email" id="contact-email" name="email" placeholder="john@example.com" required>
+                <input type="email" id="contact-email" name="email" placeholder="john@example.com" required autocomplete="email">
               </div>
               <div class="form-group">
                 <label for="contact-subject">Subject</label>
@@ -842,9 +859,14 @@
                 <button type="submit" class="btn btn-primary btn-block" id="submit-contact-btn">
                   <i class="fa-solid fa-paper-plane"></i> Send Message
                 </button>
-                <a href="mailto:bharideysaranya0809@gmail.com" class="btn btn-secondary btn-block" id="direct-email-btn" style="text-align: center;">
-                  <i class="fa-regular fa-envelope"></i> Or Email Directly
-                </a>
+                <div class="contact-quick-options">
+                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bharideysaranya0809@gmail.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="hero-gmail-direct" title="Open Gmail Composer">
+                    <i class="fa-brands fa-google"></i> Gmail Direct
+                  </a>
+                  <button type="button" class="btn btn-secondary copy-btn" data-copy="bharideysaranya0809@gmail.com" title="Copy Email">
+                    <i class="fa-regular fa-copy"></i> Copy Email
+                  </button>
+                </div>
               </div>
             </form>
           </div>

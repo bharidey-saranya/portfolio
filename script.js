@@ -360,8 +360,14 @@ function initCopyButtons() {
 function initContactForm() {
   const contactForm = document.getElementById('contact-form');
   const submitBtn = document.getElementById('submit-contact-btn');
+  const successBox = document.getElementById('contact-success-box');
+  const resetBtn = document.getElementById('reset-contact-form-btn');
+  const gmailLink = document.getElementById('success-gmail-link');
+  const mailtoLink = document.getElementById('success-mailto-link');
+  const userTitle = document.getElementById('success-user-title');
+  const userDesc = document.getElementById('success-user-desc');
 
-  // Enhance all "Contact Me" anchor links to smoothly scroll and focus the Name input
+  // Smooth scroll and focus Name field when clicking any "Contact Me" link
   document.querySelectorAll('a[href="#contact"]').forEach(link => {
     link.addEventListener('click', () => {
       setTimeout(() => {
@@ -371,9 +377,17 @@ function initContactForm() {
     });
   });
 
+  if (resetBtn && contactForm && successBox) {
+    resetBtn.addEventListener('click', () => {
+      successBox.style.display = 'none';
+      contactForm.style.display = 'flex';
+      contactForm.reset();
+    });
+  }
+
   if (!contactForm) return;
 
-  contactForm.addEventListener('submit', async (e) => {
+  contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const name = document.getElementById('contact-name')?.value?.trim();
@@ -386,48 +400,40 @@ function initContactForm() {
       return;
     }
 
-    const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '<i class="fa-solid fa-paper-plane"></i> Send Message';
-    if (submitBtn) {
-      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending message...';
-      submitBtn.disabled = true;
+    const emailBody = `Hi Saranya,\n\n${message}\n\nFrom: ${name}\nEmail: ${email}`;
+    const encodedSubject = encodeURIComponent(`[Portfolio Inquiry] ${subject}`);
+    const encodedBody = encodeURIComponent(emailBody);
+
+    // 1. Prepare Gmail Web URL (works 100% in browser, never shows blank)
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=bharideysaranya0809@gmail.com&su=${encodedSubject}&body=${encodedBody}`;
+    
+    // 2. Prepare Standard Mailto URL
+    const mailtoUrl = `mailto:bharideysaranya0809@gmail.com?subject=${encodedSubject}&body=${encodedBody}`;
+
+    // Update success card actions
+    if (gmailLink) gmailLink.href = gmailUrl;
+    if (mailtoLink) mailtoLink.href = mailtoUrl;
+    if (userTitle) userTitle.textContent = `Thank You, ${name}!`;
+    if (userDesc) {
+      userDesc.innerHTML = `Your message has been formatted. Choose an option below to deliver directly to <strong>bharideysaranya0809@gmail.com</strong>:`;
     }
 
+    // Try background notify to /api/contact if available
     try {
-      // 1. Send asynchronously via FormSubmit to Bharidey Saranya's email
-      const response = await fetch('https://formsubmit.co/ajax/bharideysaranya0809@gmail.com', {
+      fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          _subject: `[Portfolio Inquiry] ${subject} (from ${name})`,
-          message: message,
-          _captcha: 'false'
-        })
-      });
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, subject, message })
+      }).catch(() => {});
+    } catch (_) {}
 
-      const data = await response.json();
-      if (response.ok && (data.success === 'true' || data.success === true)) {
-        showToast(`🎉 Message delivered directly to Saranya! Thank you, ${name}.`);
-        contactForm.reset();
-      } else {
-        throw new Error(data.message || 'Submission service error');
-      }
-    } catch (err) {
-      console.warn('FormSubmit AJAX fallback to mailto:', err);
-      // Seamless fallback: open default email client with details pre-filled
-      const mailtoUrl = `mailto:bharideysaranya0809@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Hi Saranya,\n\n${message}\n\nRegards,\n${name}\nEmail: ${email}`)}`;
-      window.location.href = mailtoUrl;
-      showToast(`Opening your email client to deliver to Saranya...`);
-    } finally {
-      if (submitBtn) {
-        submitBtn.innerHTML = originalBtnHtml;
-        submitBtn.disabled = false;
-      }
+    // In-place UI transition: hide form, show success state without any blank pages
+    contactForm.style.display = 'none';
+    if (successBox) {
+      successBox.style.display = 'block';
     }
+
+    showToast(`🎉 Message prepared! Choose Gmail or your mail app below.`);
   });
 }
 
