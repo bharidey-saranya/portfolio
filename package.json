@@ -1,0 +1,12 @@
+{
+  "name": "bharidey-saranya-portfolio",
+  "version": "1.0.0",
+  "description": "Bharidey Saranya - PHP Backend Developer Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["portfolio", "php", "backend", "developer", "mysql"],
+  "author": "Bharidey Saranya",
+  "license": "MIT"
+}
